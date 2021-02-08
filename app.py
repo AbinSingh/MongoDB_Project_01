@@ -18,13 +18,25 @@ Database = client.get_database('Example')
 # Table 
 SampleTable = Database.SampleTable 
 
-mydict = { "name": "Abin", "address": "Highway 37" }
+#mydict = { "name": "Abin", "address": "Highway 37" }
 
-SampleTable.insert_one(mydict)
+#SampleTable.insert_one(mydict)
 
 @app.route('/')
 def home():
         return render_template('home.html')
+
+@app.route('/getdelay', methods=['POST','GET'])
+def get_delay():
+        result=request.form
+
+        twitter_post=result['twitter_post']
+        trial=[twitter_post]
+        mydict = { "name": trial, "address": "Highway 37" }
+
+        SampleTable.insert_one(mydict)
+
+        return 'finished'
 
 print('successful')
 
