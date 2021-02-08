@@ -17,7 +17,7 @@ SampleTable = Database.SampleTable
 
 mydict = { "name": "Abin", "address": "Highway 37" }
 
-x = SampleTable.insert_one(mydict)
+SampleTable.insert_one(mydict)
 
 print('successful')
 
