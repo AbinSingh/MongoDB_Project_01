@@ -21,6 +21,10 @@ mydict = { "name": "Abin", "address": "Highway 37" }
 
 SampleTable.insert_one(mydict)
 
+@app.route('/')
+def home():
+        return render_template('home.html')
+
 print('successful')
 
 if __name__ == '__main__': 
